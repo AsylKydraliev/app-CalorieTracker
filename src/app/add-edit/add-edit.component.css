@@ -1,0 +1,25 @@
+h1{
+  text-align: center;
+}
+.form-group{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 auto;
+}
+
+input{
+  margin: 10px;
+  padding: 15px;
+}
+
+select{
+  margin: 10px;
+  padding: 10px;
+}
+
+.btn{
+  margin: 10px auto;
+  padding: 15px;
+  width: 50%;
+}

@@ -1,0 +1,22 @@
+<h1>Add meal</h1>
+<form (ngSubmit)="createMeal()" class="form-group" #f="ngForm">
+  <select name="mealTime" ngModel>
+    <option value="breakfast">Breakfast</option>
+    <option value="snack">Snack</option>
+    <option value="lunch">Lunch</option>
+    <option value="dinner">Dinner</option>
+  </select>
+  <input
+    type="text"
+    placeholder="Meal description"
+    name="description"
+    ngModel
+  >
+  <input
+    type="text"
+    placeholder="Calories"
+    name="calories"
+    ngModel
+  >
+  <button class="btn">Save</button>
+</form>
