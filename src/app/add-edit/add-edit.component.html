@@ -1,22 +1,30 @@
-<h1>Add meal</h1>
-<form (ngSubmit)="createMeal()" class="form-group" #f="ngForm">
-  <select name="mealTime" ngModel>
+<h1>{{ isEdit? 'Edit meal': 'Add meal' }}</h1>
+<form (ngSubmit)="saveMeal()" class="form-group" #formMeal="ngForm">
+  <select name="mealTime" id="mealTime" ngModel>
+    <option value="">Select meal</option>
     <option value="breakfast">Breakfast</option>
     <option value="snack">Snack</option>
     <option value="lunch">Lunch</option>
     <option value="dinner">Dinner</option>
   </select>
   <input
+    id="description"
     type="text"
     placeholder="Meal description"
     name="description"
     ngModel
   >
   <input
-    type="text"
+    id="calories"
+    type="number"
     placeholder="Calories"
     name="calories"
     ngModel
   >
-  <button class="btn">Save</button>
+  <button
+    class="btn"
+    [disabled]="formMeal.form.value.mealTime === '' ||
+    formMeal.form.value.description === '' ||
+    formMeal.form.value.calories === ''"
+  >Save </button>
 </form>

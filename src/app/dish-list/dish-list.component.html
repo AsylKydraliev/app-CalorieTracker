@@ -1,1 +1,29 @@
-<p>dish-list works!</p>
+<div class="preloader" *ngIf="loading">
+  <div class="spinner">
+    <span class="spinner__animation"></span>
+    <span class="spinner__info"></span>
+  </div>
+</div>
+<div *ngIf="!loading">
+  <div class="content" *ngFor="let meal of meals">
+    <div class="flex">
+      <div class="info">
+        <p class="opacity">{{ meal.mealTime }}</p>
+        <p class="description">{{ meal.description }}</p>
+        <p>{{ meal.calories }} calories</p>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" (click)="onRemove(meal.id)" [disabled]="removeLoading">
+          <span class="removeLoading" *ngIf="removeLoading">
+            <span class="spinner_remove"></span>
+            <span class="spinner__info"></span>
+          </span>
+          <span *ngIf="!removeLoading">Delete</span>
+        </button>&nbsp;
+        <button class="edit" [routerLink]="[meal.id, 'edit']">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>
+

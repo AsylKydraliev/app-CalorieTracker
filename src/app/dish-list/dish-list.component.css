@@ -1,0 +1,67 @@
+.content{
+  margin: 6px auto;
+  display: block;
+  width: 70%;
+  padding: 10px;
+  background: slategray;
+  color: #fff;
+}
+
+.flex{
+  display: flex;
+}
+
+.opacity{
+  opacity: 0.5;
+}
+
+.info{
+  width: 70%;
+}
+
+.buttons{
+  width: 30%;
+}
+
+.description{
+  font-size: 20px;
+  margin: 0;
+}
+
+.spinner {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.removeLoading{
+  margin: 0;
+}
+
+.spinner__animation {
+  display: inline-block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-top: 3px solid rgba(0, 0, 0, 0.1);
+  border-right: 3px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+  border-left: 3px solid rgb(129, 138, 145);
+  animation: loading-spinner 0.5s infinite linear;
+}
+
+.spinner_remove{
+  display: inline-block;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid rgba(0, 0, 0, 0.1);
+  border-right: 3px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+  border-left: 3px solid rgb(129, 138, 145);
+  animation: loading-spinner 0.5s infinite linear;
+}
+
+@keyframes loading-spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
