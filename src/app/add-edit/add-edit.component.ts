@@ -20,7 +20,6 @@ export class AddEditComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.meal = <Meal | null>data.meal;
-
       if(this.meal){
         this.isEdit = true;
         this.editId = this.meal.id;
@@ -28,6 +27,7 @@ export class AddEditComponent implements OnInit {
           mealTime: this.meal.mealTime,
           description: this.meal.description,
           calories: this.meal.calories,
+          date: this.meal.date,
         })
       }else {
         this.isEdit = false;
@@ -36,6 +36,7 @@ export class AddEditComponent implements OnInit {
           mealTime: '',
           description: '',
           calories: '',
+          date: ''
         })
       }
     })
@@ -45,16 +46,16 @@ export class AddEditComponent implements OnInit {
     setTimeout(() => {
       this.form.form.setValue(value);
     })
-
   }
 
   saveMeal() {
     const id = this.editId || Math.random().toString();
     const newMeal = new Meal(
-      id,
+       id,
        this.form.value.mealTime,
        this.form.value.description,
-       this.form.value.calories
+       this.form.value.calories,
+       this.form.value.date,
     );
 
     if(this.editId) {

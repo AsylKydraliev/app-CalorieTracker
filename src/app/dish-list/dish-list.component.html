@@ -8,6 +8,7 @@
   <div class="content" *ngFor="let meal of meals">
     <div class="flex">
       <div class="info">
+        <p>{{ meal.date }}</p>
         <p class="opacity">{{ meal.mealTime }}</p>
         <p class="description">{{ meal.description }}</p>
         <p>{{ meal.calories }} calories</p>

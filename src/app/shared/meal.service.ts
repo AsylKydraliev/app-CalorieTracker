@@ -16,7 +16,7 @@ export class MealService{
   constructor(private http: HttpClient){}
 
   postData(meal: Meal){
-    const body = new Meal(meal.id, meal.mealTime, meal.description, meal.calories);
+    const body = new Meal(meal.id, meal.mealTime, meal.description, meal.calories, meal.date);
     this.http.post('https://app-blog-f76a2-default-rtdb.firebaseio.com/meal.json', body).subscribe();
   }
 
@@ -29,7 +29,7 @@ export class MealService{
         }
          return Object.keys(result).map(id => {
            const data = result[id];
-           return new Meal(id, data.mealTime, data.description, data.calories);
+           return new Meal(id, data.mealTime, data.description, data.calories, data.date);
          })
       }))
       .subscribe(result => {
@@ -46,7 +46,7 @@ export class MealService{
     return this.http.get<Meal | null>(`https://app-blog-f76a2-default-rtdb.firebaseio.com/meal/${id}.json`)
       .pipe(map(result => {
         if(!result) return  null;
-        return new Meal(id, result.mealTime, result.description, result.calories);
+        return new Meal(id, result.mealTime, result.description, result.calories, result.date);
       }))
   }
 

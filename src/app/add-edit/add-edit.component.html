@@ -1,4 +1,4 @@
-<h1>{{ isEdit? 'Edit meal': 'Add meal' }}</h1>
+<script src="../app.component.ts"></script><h1>{{ isEdit? 'Edit meal': 'Add meal' }}</h1>
 <form (ngSubmit)="saveMeal()" class="form-group" #formMeal="ngForm">
   <select name="mealTime" id="mealTime" ngModel>
     <option value="">Select meal</option>
@@ -21,10 +21,12 @@
     name="calories"
     ngModel
   >
+  <input type="date" name="date" ngModel>
   <button
     class="btn"
     [disabled]="formMeal.form.value.mealTime === '' ||
     formMeal.form.value.description === '' ||
-    formMeal.form.value.calories === ''"
+    formMeal.form.value.calories === '' ||
+    formMeal.form.value.date === ''"
   >Save </button>
 </form>
