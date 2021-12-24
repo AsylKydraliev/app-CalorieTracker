@@ -57,6 +57,7 @@ export class MealService{
       mealTime: meal.mealTime,
       description: meal.description,
       calories: meal.calories,
+      date: meal.date,
     }
     return this.http.put(`https://app-blog-f76a2-default-rtdb.firebaseio.com/meal/${meal.id}.json`, body).pipe(
       tap(() => {
