@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
   }
 
   getDateFormat(){
-    const formatDate = (date: any) => {
+    const formatDate = (date: string) => {
       let d = new Date(date),
         month = '' + (d.getMonth() + 1),
         day = '' + d.getDate(),

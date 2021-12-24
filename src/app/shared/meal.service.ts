@@ -13,6 +13,7 @@ export class MealService{
   mealsChange = new Subject<Meal[]>();
   removing = new Subject<boolean>();
   mealLoading = new Subject<boolean>();
+
   constructor(private http: HttpClient){}
 
   postData(meal: Meal){
@@ -67,7 +68,7 @@ export class MealService{
   }
 
   onRemove(id: string){
-    this.removing.next(true);
+   this.removing.next(true);
     return this.http.delete(`https://app-blog-f76a2-default-rtdb.firebaseio.com/meal/${id}.json`).pipe(
       tap(() => {
         this.removing.next(false);

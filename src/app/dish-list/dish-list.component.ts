@@ -15,6 +15,8 @@ export class DishListComponent implements OnInit, OnDestroy {
   mealsLoadingSubscription!: Subscription;
   removeLoading = false;
   loading = false;
+  clickId = '';
+
   constructor(private mealsService: MealService) { }
 
   ngOnInit(){
@@ -25,12 +27,13 @@ export class DishListComponent implements OnInit, OnDestroy {
       this.loading = isFetching;
     });
     this.mealsRemoveSubscription = this.mealsService.removing.subscribe((isRemoving: boolean) => {
-      this.removeLoading = isRemoving;
+        this.removeLoading = isRemoving;
     })
     this.mealsService.getData();
   }
 
   onRemove(id: string) {
+    this.clickId = id;
     this.mealsService.onRemove(id);
   }
 

@@ -15,7 +15,7 @@ export class AddEditComponent implements OnInit {
   editId = '';
   meal : Meal | null = null;
 
-  constructor(private mealService: MealService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private mealService: MealService, private router: Router, private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -36,7 +36,7 @@ export class AddEditComponent implements OnInit {
           mealTime: '',
           description: '',
           calories: '',
-          date: ''
+          date: '',
         })
       }
     })

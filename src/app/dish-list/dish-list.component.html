@@ -16,7 +16,7 @@
 
       <div class="buttons">
         <button type="submit" (click)="onRemove(meal.id)" [disabled]="removeLoading">
-          <span class="removeLoading" *ngIf="removeLoading">
+            <span class="removeLoading" *ngIf="removeLoading && meal.id === clickId">
             <span class="spinner_remove"></span>
             <span class="spinner__info"></span>
           </span>
