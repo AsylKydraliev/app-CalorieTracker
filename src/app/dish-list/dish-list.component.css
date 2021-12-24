@@ -3,8 +3,19 @@
   display: block;
   width: 70%;
   padding: 10px;
-  background: slategray;
+  background: Tomato;
   color: #fff;
+  border-radius: 10px;
+}
+
+.content:hover{
+  box-shadow: 0 0 5px 4px Tomato;
+}
+
+.date{
+  font-style: italic;
+  margin: 0;
+  font-size: 20px;
 }
 
 .flex{
@@ -13,6 +24,7 @@
 
 .opacity{
   opacity: 0.5;
+  font-size: 18px;
 }
 
 .info{
@@ -21,6 +33,26 @@
 
 .buttons{
   width: 30%;
+  margin: 40px 0 30px 80px;
+}
+
+.btn{
+  background: DodgerBlue;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  display: block;
+  width: 80px;
+}
+
+.btn:hover{
+  box-shadow: 0 0 5px 2px #000000;
+}
+
+.edit{
+  background: #4CAF50;
 }
 
 .description{

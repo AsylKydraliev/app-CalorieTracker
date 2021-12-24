@@ -4,3 +4,26 @@
   display: flex;
   justify-content: space-between;
 }
+
+p{
+  font-size: 20px;
+  font-style: italic;
+  color: dimgray;
+}
+
+.btn{
+  background: #333333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.btn:hover{
+  box-shadow: 0 0 5px 2px #000000;
+}
+
+.btn:active{
+  background: darkslateblue;
+}

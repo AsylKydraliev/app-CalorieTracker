@@ -8,21 +8,22 @@
   <div class="content" *ngFor="let meal of meals">
     <div class="flex">
       <div class="info">
-        <p>{{ meal.date }}</p>
-        <p class="opacity">{{ meal.mealTime }}</p>
+        <p class="date">{{ meal.date }}</p>
+        <hr>
+        <p class="opacity"><span>Meal: </span>{{ meal.mealTime }}</p>
         <p class="description">{{ meal.description }}</p>
         <p>{{ meal.calories }} calories</p>
       </div>
 
       <div class="buttons">
-        <button type="submit" (click)="onRemove(meal.id)" [disabled]="removeLoading">
+        <button type="submit" class="btn delete" (click)="onRemove(meal.id)" [disabled]="removeLoading">
             <span class="removeLoading" *ngIf="removeLoading && meal.id === clickId">
             <span class="spinner_remove"></span>
             <span class="spinner__info"></span>
           </span>
           <span *ngIf="!removeLoading">Delete</span>
         </button>&nbsp;
-        <button class="edit" [routerLink]="[meal.id, 'edit']">Edit</button>
+        <button class="btn edit" [routerLink]="[meal.id, 'edit']">Edit</button>
       </div>
     </div>
   </div>

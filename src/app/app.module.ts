@@ -8,13 +8,15 @@ import { HomeComponent } from './home/home.component';
 import { DishListComponent } from './dish-list/dish-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NotFountComponent } from './not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEditComponent,
     HomeComponent,
-    DishListComponent
+    DishListComponent,
+    NotFountComponent
   ],
   imports: [
     BrowserModule,
